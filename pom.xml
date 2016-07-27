@@ -6,6 +6,9 @@
     <groupId>OLX</groupId>
     <artifactId>DesafioQA</artifactId>
     <version>1.0</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -52,6 +55,21 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>*.feature</include>
+                </includes>
+                <excludes>
+                    <exclude>.java</exclude>
+                    <exclude>.class</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+            </resource>
+        </resources>
     </build>
     <dependencies>
         <dependency>
