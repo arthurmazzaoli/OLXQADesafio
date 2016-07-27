@@ -61,11 +61,10 @@ public class FormFx {
 
         borderPane.setCenter(subTituloFuncaoLabel);
 
-        Label resultadoWebTest = new Label();
-        resultadoWebTest.getStyleClass().add("textoLabel");
-        BorderPane.setAlignment(resultadoWebTest, Pos.CENTER);
-
-        borderPane.setTop(resultadoWebTest);
+        Label resultado = new Label();
+        resultado.getStyleClass().add("textoLabel");
+        BorderPane.setAlignment(resultado, Pos.CENTER);
+        borderPane.setTop(resultado);
 
         GridPane gridPane = new GridPane();
         gridPane.setPrefSize(450, 520);
@@ -144,7 +143,7 @@ public class FormFx {
                     @Override
                     protected void succeeded() {
                         super.succeeded();
-                        resultadoWebTest.setText("Processo executado");
+                        resultado.setText("Processo executado");
                         ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
@@ -154,9 +153,9 @@ public class FormFx {
                         Exception e = (Exception) getException();
                         e.printStackTrace();
 
-                        resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
+                        resultado.setText("Ocorreu um erro ao realizar a operação");
                         ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                        resultadoWebTest.setTextFill(Color.RED);
+                        resultado.setTextFill(Color.RED);
                     }
 
                 };
@@ -165,9 +164,9 @@ public class FormFx {
             }catch (Exception e){
                 e.printStackTrace();
 
-                resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
+                resultado.setText("Ocorreu um erro ao realizar a operação");
                 ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                resultadoWebTest.setTextFill(Color.RED);
+                resultado.setTextFill(Color.RED);
             }
         });
 
@@ -198,7 +197,7 @@ public class FormFx {
                     @Override
                     protected void succeeded() {
                         super.succeeded();
-                        resultadoWebTest.setText("Processo executado");
+                        resultado.setText("Processo executado");
                         ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
@@ -208,9 +207,9 @@ public class FormFx {
                         Exception e = (Exception) getException();
                         e.printStackTrace();
 
-                        resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
+                        resultado.setText("Ocorreu um erro ao realizar a operação");
                         ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                        resultadoWebTest.setTextFill(Color.RED);
+                        resultado.setTextFill(Color.RED);
                     }
 
                 };
@@ -219,9 +218,9 @@ public class FormFx {
             }catch (Exception e){
                 e.printStackTrace();
 
-                resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
+                resultado.setText("Ocorreu um erro ao realizar a operação");
                 ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                resultadoWebTest.setTextFill(Color.RED);
+                resultado.setTextFill(Color.RED);
             }
         });
 
@@ -253,7 +252,7 @@ public class FormFx {
                     @Override
                     protected void succeeded() {
                         super.succeeded();
-                        resultadoWebTest.setText("Processo executado");
+                        resultado.setText("Processo executado");
                         ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
@@ -263,9 +262,9 @@ public class FormFx {
                         Exception e = (Exception) getException();
                         e.printStackTrace();
 
-                        resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
+                        resultado.setText("Ocorreu um erro ao realizar a operação");
                         ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                        resultadoWebTest.setTextFill(Color.RED);
+                        resultado.setTextFill(Color.RED);
                     }
 
                 };
@@ -274,9 +273,9 @@ public class FormFx {
             }catch (Exception e){
                 e.printStackTrace();
 
-                resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
+                resultado.setText("Ocorreu um erro ao realizar a operação");
                 ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                resultadoWebTest.setTextFill(Color.RED);
+                resultado.setTextFill(Color.RED);
             }
         });
 
