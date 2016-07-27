@@ -15,6 +15,12 @@ import org.junit.runner.notification.Failure;
 import test.mobileTest.cucumber.features.RunCukesTestMobile;
 import test.webTest.cucumber.features.RunCukesTest;
 import test.restTest.DesafioQAREST;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Arthur on 26/07/2016.
@@ -26,6 +32,10 @@ public class FormFx {
     private Button btnExecutarWeb;
     private Button btnExecutarMob;
     private Button btnExecutarRest;
+    private ByteArrayOutputStream baos;
+    private PrintStream previous;
+    private boolean capturing;
+
 
     public FormFx() {
 
@@ -61,10 +71,14 @@ public class FormFx {
 
         borderPane.setCenter(subTituloFuncaoLabel);
 
+        Label espacamento = new Label();
+        espacamento.getStyleClass().add("textoLabel");
+        BorderPane.setAlignment(espacamento, Pos.CENTER);
+        borderPane.setTop(espacamento);
+
         Label resultado = new Label();
         resultado.getStyleClass().add("textoLabel");
         BorderPane.setAlignment(resultado, Pos.CENTER);
-        borderPane.setTop(resultado);
 
         GridPane gridPane = new GridPane();
         gridPane.setPrefSize(450, 520);
@@ -123,6 +137,8 @@ public class FormFx {
 
                 limparConsole();
 
+                start();
+
                 ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes Web");
 
                 Task<String> task = new Task<String>() {
@@ -130,6 +146,10 @@ public class FormFx {
                     protected String call() throws Exception {
 
                         Result result = JUnitCore.runClasses(RunCukesTest.class);
+
+                        String capturedValue = baos.toString();
+                        ConsoleLog.getInstance().exibirMensagem(capturedValue);
+
                         for (Failure failure : result.getFailures()) {
                             ConsoleLog.getInstance().exibirMensagem(failure.toString());
                             System.out.println(failure.toString());
@@ -177,18 +197,24 @@ public class FormFx {
 
                 limparConsole();
 
+                start();
+
                 ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes Mobile");
 
                 Task<String> task = new Task<String>() {
                     @Override
                     protected String call() throws Exception {
 
-                        Result result2 = JUnitCore.runClasses(RunCukesTestMobile.class);
-                        for (Failure failure : result2.getFailures()) {
+                        Result result = JUnitCore.runClasses(RunCukesTestMobile.class);
+
+                        String capturedValue = baos.toString();
+                        ConsoleLog.getInstance().exibirMensagem(capturedValue);
+
+                        for (Failure failure : result.getFailures()) {
                             ConsoleLog.getInstance().exibirMensagem(failure.toString());
                             System.out.println(failure.toString());
                         }
-                        System.out.println(result2.wasSuccessful());
+                        System.out.println(result.wasSuccessful());
                         ConsoleLog.getInstance().exibirMensagem("true");
 
                         return "true";
@@ -231,13 +257,18 @@ public class FormFx {
 
                 limparConsole();
 
+                start();
+
                 ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes REST");
 
                 Task<String> task = new Task<String>() {
                     @Override
                     protected String call() throws Exception {
 
-                        Result result = JUnitCore.runClasses(DesafioQAREST.class);
+                        Result result = org.junit.runner.JUnitCore.runClasses(DesafioQAREST.class);
+
+                        String capturedValue = baos.toString();
+                        ConsoleLog.getInstance().exibirMensagem(capturedValue);
 
                         for (Failure failure : result.getFailures()) {
                             ConsoleLog.getInstance().exibirMensagem(failure.toString());
@@ -329,6 +360,48 @@ public class FormFx {
 
     public void setTxtAreaConsoleWeb(TextArea txtAreaConsoleWeb) {
         this.txtAreaConsole = txtAreaConsoleWeb;
+    }
+
+    public void start() {
+        if (capturing) {
+            return;
+        }
+
+        capturing = true;
+        previous = System.out;
+        baos = new ByteArrayOutputStream();
+
+        OutputStream outputStreamCombiner =
+                new OutputStreamCombiner(Arrays.asList(previous, baos));
+        PrintStream custom = new PrintStream(outputStreamCombiner);
+
+        System.setOut(custom);
+    }
+
+    private static class OutputStreamCombiner extends OutputStream {
+        private List<OutputStream> outputStreams;
+
+        public OutputStreamCombiner(List<OutputStream> outputStreams) {
+            this.outputStreams = outputStreams;
+        }
+
+        public void write(int b) throws IOException {
+            for (OutputStream os : outputStreams) {
+                os.write(b);
+            }
+        }
+
+        public void flush() throws IOException {
+            for (OutputStream os : outputStreams) {
+                os.flush();
+            }
+        }
+
+        public void close() throws IOException {
+            for (OutputStream os : outputStreams) {
+                os.close();
+            }
+        }
     }
 
 }
