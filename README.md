@@ -15,3 +15,10 @@ Criar ou utilizar alguma API já existente e criar pelo menos 2 cenários de tes
 Adicionar uma rotina para execução dos testes automaticamente
 Vamos executar seu programa em um Mac OS X ou alguma distribuição Linux. Para isso, forneça um arquivo README explicando:
 como executar os testes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+INSTRUÇÕES
+
+A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
+
