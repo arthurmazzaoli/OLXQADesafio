@@ -1,0 +1,79 @@
+.basePanel {
+    -fx-background-color: black;
+
+}
+
+.rootPane {
+
+    -fx-border-insets: 23;
+    -fx-background-insets: 23;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: gray;
+    -fx-border-style: solid;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(100, 100, 100, 1), 24, 0.5, 0, 0);
+
+}
+
+.gridButtons{
+    -fx-border-color:  #3e4a62;
+    -fx-border-width: 1px 0 0 0;
+    -fx-background-color: #2e3648;
+}
+
+.buttonColor{
+    -fx-background-color: #8f96a6;
+    -fx-background-radius: 0, 0, 0, 0;
+}
+
+
+.textoLabelTitulo {
+    -fx-font-family: "Tahoma";
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-padding: 0,0,0,28;
+}
+
+.textoLabelSubTitulo {
+    -fx-font-family: "Tahoma";
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-padding: 0,0,0,28;
+}
+
+.textoLabel {
+    -fx-font-family: "Tahoma";
+    -fx-text-fill: #8f96a6;
+    -fx-font-size: 12px;
+    -fx-padding: 0,0,0,28;
+}
+
+.text-field {
+    -fx-background-color: black;
+    -fx-border-color: #8f96a6;
+    -fx-text-fill: #ffffff;
+}
+
+.text-area {
+    -fx-font-family: "Tahoma";
+    -fx-highlight-fill: #ffffff;
+    -fx-highlight-text-fill: #8f96a6;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: rgba(11, 15, 22, 0.89);
+    -fx-border-color: #8f96a6;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: #000000;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: #000000;
+}
+
