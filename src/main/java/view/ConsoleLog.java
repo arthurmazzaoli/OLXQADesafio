@@ -12,18 +12,18 @@ public class ConsoleLog {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private FormFx formFx;
 
-    public void iniciar(FormFx controller, String mensagem, int type){
+    public void iniciar(FormFx controller, String mensagem){
 
         this.formFx = controller;
 
         formFx.limparConsole();
 
-        exibirMensagem(mensagem, type);
+        exibirMensagem(mensagem);
     }
 
-    public void exibirMensagem(String mensagem, int type){
+    public void exibirMensagem(String mensagem){
 
-        formFx.showMessagerTextArea(dateFormat.format(new Date())+" : "+mensagem, type);
+        formFx.showMessagerTextArea(dateFormat.format(new Date())+" : "+mensagem);
 
     }
 

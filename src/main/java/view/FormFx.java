@@ -22,9 +22,7 @@ import test.restTest.DesafioQAREST;
 public class FormFx {
 
     private AnchorPane panelContent;
-    private TextArea txtAreaConsoleWeb;
-    private TextArea txtAreaConsoleMob;
-    private TextArea txtAreaConsoleRest;
+    private TextArea txtAreaConsole;
     private Button btnExecutarWeb;
     private Button btnExecutarMob;
     private Button btnExecutarRest;
@@ -93,20 +91,12 @@ public class FormFx {
 
         gridPane.getRowConstraints().addAll(linhaConsole, rowConstraints);
 
-        txtAreaConsoleWeb = new TextArea();
-        txtAreaConsoleWeb.setPrefSize(385, 143);
-        txtAreaConsoleWeb.setEditable(false);
-        GridPane.setMargin(txtAreaConsoleWeb, new Insets(10, 0, 0, 0));
+        txtAreaConsole = new TextArea();
+        txtAreaConsole.setPrefSize(385, 143);
+        txtAreaConsole.setEditable(false);
+        GridPane.setMargin(txtAreaConsole, new Insets(10, 0, 0, 0));
 
-        txtAreaConsoleMob = new TextArea();
-        txtAreaConsoleMob.setPrefSize(385, 143);
-        txtAreaConsoleMob.setEditable(false);
-        GridPane.setMargin(txtAreaConsoleMob, new Insets(10, 0, 0, 0));
-
-        txtAreaConsoleRest = new TextArea();
-        txtAreaConsoleRest.setPrefSize(385, 143);
-        txtAreaConsoleRest.setEditable(false);
-        GridPane.setMargin(txtAreaConsoleRest, new Insets(10, 0, 0, 0));
+        gridPane.getChildren().addAll(txtAreaConsole);
 
         btnExecutarWeb = new Button("Testes Web");
         btnExecutarWeb.setPrefSize(120, 25);
@@ -138,10 +128,9 @@ public class FormFx {
         btnExecutarWeb.setOnAction(event -> {
             try {
 
-                txtAreaConsoleWeb.visibleProperty().set(true);
-                txtAreaConsoleMob.visibleProperty().set(false);
-                txtAreaConsoleRest.visibleProperty().set(false);
-                ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes Web", 1);
+                limparConsole();
+
+                ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes Web");
 
                 Task<String> task = new Task<String>() {
                     @Override
@@ -149,11 +138,11 @@ public class FormFx {
 
                         Result result = JUnitCore.runClasses(RunCukesTest.class);
                         for (Failure failure : result.getFailures()) {
-                            ConsoleLog.getInstance().exibirMensagem(failure.toString(), 1);
+                            ConsoleLog.getInstance().exibirMensagem(failure.toString());
                             System.out.println(failure.toString());
                         }
                         System.out.println(result.wasSuccessful());
-                        ConsoleLog.getInstance().exibirMensagem("true", 1);
+                        ConsoleLog.getInstance().exibirMensagem("true");
 
                         return "true";
                     }
@@ -162,7 +151,7 @@ public class FormFx {
                     protected void succeeded() {
                         super.succeeded();
                         resultadoWebTest.setText("Processo executado");
-                        ConsoleLog.getInstance().exibirMensagem("Processo executado", 1);
+                        ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
                     @Override
@@ -172,7 +161,7 @@ public class FormFx {
                         e.printStackTrace();
 
                         resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
-                        ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação", 1);
+                        ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
                         resultadoWebTest.setTextFill(Color.RED);
                     }
 
@@ -183,20 +172,19 @@ public class FormFx {
                 e.printStackTrace();
 
                 resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
-                ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação", 1);
+                ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
                 resultadoWebTest.setTextFill(Color.RED);
             }
         });
 
-        gridPane.getChildren().addAll(txtAreaConsoleWeb, btnExecutarWeb);
+        gridPane.getChildren().addAll(btnExecutarWeb);
 
         btnExecutarMob.setOnAction(event -> {
             try {
 
-                txtAreaConsoleMob.visibleProperty().set(true);
-                txtAreaConsoleWeb.visibleProperty().set(false);
-                txtAreaConsoleRest.visibleProperty().set(false);
-                ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes Mobile", 2);
+                limparConsole();
+
+                ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes Mobile");
 
                 Task<String> task = new Task<String>() {
                     @Override
@@ -204,11 +192,11 @@ public class FormFx {
 
                         Result result2 = JUnitCore.runClasses(RunCukesTestMobile.class);
                         for (Failure failure : result2.getFailures()) {
-                            ConsoleLog.getInstance().exibirMensagem(failure.toString(), 2);
+                            ConsoleLog.getInstance().exibirMensagem(failure.toString());
                             System.out.println(failure.toString());
                         }
                         System.out.println(result2.wasSuccessful());
-                        ConsoleLog.getInstance().exibirMensagem("true", 2);
+                        ConsoleLog.getInstance().exibirMensagem("true");
 
                         return "true";
                     }
@@ -217,7 +205,7 @@ public class FormFx {
                     protected void succeeded() {
                         super.succeeded();
                         resultadoMobtest.setText("Processo executado");
-                        ConsoleLog.getInstance().exibirMensagem("Processo executado", 2);
+                        ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
                     @Override
@@ -227,7 +215,7 @@ public class FormFx {
                         e.printStackTrace();
 
                         resultadoMobtest.setText("Ocorreu um erro ao realizar a operação");
-                        ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação", 2);
+                        ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
                         resultadoMobtest.setTextFill(Color.RED);
                     }
 
@@ -238,36 +226,32 @@ public class FormFx {
                 e.printStackTrace();
 
                 resultadoMobtest.setText("Ocorreu um erro ao realizar a operação");
-                ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação", 2);
+                ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
                 resultadoMobtest.setTextFill(Color.RED);
             }
         });
 
-        gridPane.getChildren().addAll(txtAreaConsoleMob, btnExecutarMob);
+        gridPane.getChildren().addAll(btnExecutarMob);
 
         btnExecutarRest.setOnAction(event -> {
             try {
 
-                txtAreaConsoleRest.visibleProperty().set(true);
-                txtAreaConsoleWeb.visibleProperty().set(false);
-                txtAreaConsoleMob.visibleProperty().set(false);
-                ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes REST", 3);
+                limparConsole();
+
+                ConsoleLog.getInstance().iniciar(this, "Iniciando os Testes REST");
 
                 Task<String> task = new Task<String>() {
                     @Override
                     protected String call() throws Exception {
 
-//                        DesafioQAREST rest = new DesafioQAREST();
-//                        rest.testGet();
-//                        rest.testGet();
                         Result result = JUnitCore.runClasses(DesafioQAREST.class);
 
                         for (Failure failure : result.getFailures()) {
-                            ConsoleLog.getInstance().exibirMensagem(failure.toString(), 3);
+                            ConsoleLog.getInstance().exibirMensagem(failure.toString());
                             System.out.println(failure.toString());
                         }
                         System.out.println(result.wasSuccessful());
-                        ConsoleLog.getInstance().exibirMensagem("true", 2);
+                        ConsoleLog.getInstance().exibirMensagem("true");
 
                         return "true";
                     }
@@ -276,7 +260,7 @@ public class FormFx {
                     protected void succeeded() {
                         super.succeeded();
                         btnExecutarRest.setText("Processo executado");
-                        ConsoleLog.getInstance().exibirMensagem("Processo executado", 3);
+                        ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
                     @Override
@@ -286,7 +270,7 @@ public class FormFx {
                         e.printStackTrace();
 
                         btnExecutarRest.setText("Ocorreu um erro ao realizar a operação");
-                        ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação", 3);
+                        ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
                         btnExecutarRest.setTextFill(Color.RED);
                     }
 
@@ -297,72 +281,35 @@ public class FormFx {
                 e.printStackTrace();
 
                 btnExecutarRest.setText("Ocorreu um erro ao realizar a operação");
-                ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação", 3);
+                ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
                 btnExecutarRest.setTextFill(Color.RED);
             }
         });
 
-        gridPane.getChildren().addAll(txtAreaConsoleRest, btnExecutarRest);
+        gridPane.getChildren().addAll(btnExecutarRest);
 
     }
 
-    public void showMessagerTextArea(String message, int type) {
+    public void showMessagerTextArea(String message) {
 
         int columnsOver = 0;
 
-        switch (type) {
+                this.getTxtAreaConsole().appendText(message + "\n");
 
-            case 1:
+                this.getTxtAreaConsole().setPrefRowCount(this.getTxtAreaConsole().prefRowCountProperty().get());
 
-                this.getTxtAreaConsoleWeb().appendText(message + "\n");
-
-                this.getTxtAreaConsoleWeb().setPrefRowCount(this.getTxtAreaConsoleWeb().prefRowCountProperty().get());
-
-                if (message.length() > this.getTxtAreaConsoleWeb().getPrefColumnCount()) {
+                if (message.length() > this.getTxtAreaConsole().getPrefColumnCount()) {
                     columnsOver = message.length();
-                    this.getTxtAreaConsoleWeb().setPrefColumnCount(columnsOver);
+                    this.getTxtAreaConsole().setPrefColumnCount(columnsOver);
                 }
 
-                this.getTxtAreaConsoleWeb().positionCaret(this.getTxtAreaConsoleWeb().getText().length());
-
-                break;
-
-            case 2:
-
-                this.getTxtAreaConsoleMob().appendText(message + "\n");
-
-                this.getTxtAreaConsoleMob().setPrefRowCount(this.getTxtAreaConsoleMob().prefRowCountProperty().get());
-
-                if (message.length() > this.getTxtAreaConsoleMob().getPrefColumnCount()) {
-                    columnsOver = message.length();
-                    this.getTxtAreaConsoleWeb().setPrefColumnCount(columnsOver);
-                }
-
-                this.getTxtAreaConsoleMob().positionCaret(this.getTxtAreaConsoleMob().getText().length());
-
-                break;
-
-            case 3:
-
-                this.getTxtAreaConsoleRest().appendText(message + "\n");
-
-                this.getTxtAreaConsoleRest().setPrefRowCount(this.getTxtAreaConsoleRest().prefRowCountProperty().get());
-
-                if (message.length() > this.getTxtAreaConsoleRest().getPrefColumnCount()) {
-                    columnsOver = message.length();
-                    this.getTxtAreaConsoleRest().setPrefColumnCount(columnsOver);
-                }
-
-                this.getTxtAreaConsoleRest().positionCaret(this.getTxtAreaConsoleRest().getText().length());
-
-                break;
-        }
+                this.getTxtAreaConsole().positionCaret(this.getTxtAreaConsole().getText().length());
 
     }
 
 
     public void limparConsole(){
-        this.getTxtAreaConsoleWeb().setText("");
+        this.getTxtAreaConsole().setText("");
 
     }
 
@@ -383,24 +330,12 @@ public class FormFx {
         this.btnExecutarWeb = btnExecutarWeb;
     }
 
-    public TextArea getTxtAreaConsoleWeb() {
-        return txtAreaConsoleWeb;
+    public TextArea getTxtAreaConsole() {
+        return txtAreaConsole;
     }
 
     public void setTxtAreaConsoleWeb(TextArea txtAreaConsoleWeb) {
-        this.txtAreaConsoleWeb = txtAreaConsoleWeb;
-    }
-
-    public TextArea getTxtAreaConsoleMob() {
-        return txtAreaConsoleMob;
-    }
-
-    public TextArea getTxtAreaConsoleRest() {
-        return txtAreaConsoleRest;
-    }
-
-    public void setTxtAreaConsoleMob(TextArea txtAreaConsoleWeb) {
-        this.txtAreaConsoleMob = txtAreaConsoleWeb;
+        this.txtAreaConsole = txtAreaConsoleWeb;
     }
 
 }
