@@ -9,6 +9,6 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(format = {"pretty", "html:target/Destination"},
-                 features = {"target\\classes\\test\\mobileTest\\cucumber\\features"})
+                 features = {"target/classes/test/mobileTest/cucumber/features"})
 public class RunCukesTestMobile {
 }
