@@ -8,6 +8,7 @@ test\webTest\webdriver\pageObjects\PageObjects_TelaLogin.class
 test\webTest\cucumber\features\RunCukesTest.class
 test\mobileTest\cucumber\features\Step_DesafioOLXMobile.class
 view\ConsoleLog.class
+view\FormFx$OutputStreamCombiner.class
 test\mobileTest\appium\utils\Constant.class
 view\MainFx.class
 test\webTest\webdriver\interactions\Interactions_TelaInicial.class
