@@ -5,7 +5,6 @@ Objetivo
 Verificar suas habilidades em definir cenários de testes e em programação, necessárias para automatização dos testes.
 Regras
 
-O prazo proposto para a entrega do desafio é de 1 semana. No entanto, entendemos que falta de tempo é um problema real. Estamos abertos a negociação, caso necessário.
 Pode usar qualquer linguagem de programação;
 
 Seu programa deve fazer o seguinte:
