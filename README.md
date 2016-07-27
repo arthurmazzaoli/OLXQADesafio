@@ -30,6 +30,10 @@ A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, ba
 
 TESTES ANDROID
 
+
+
+TESTES ANDROID
+
 1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;
     1.1 - Acessar https://www.genymotion.com/;
     
