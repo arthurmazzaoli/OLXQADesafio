@@ -59,19 +59,13 @@ public class FormFx {
         subTituloFuncaoLabel.getStyleClass().add("textoLabelSubTitulo");
         BorderPane.setAlignment(subTituloFuncaoLabel, Pos.TOP_CENTER);
 
-        borderPane.setTop(subTituloFuncaoLabel);
+        borderPane.setCenter(subTituloFuncaoLabel);
 
         Label resultadoWebTest = new Label();
         resultadoWebTest.getStyleClass().add("textoLabel");
         BorderPane.setAlignment(resultadoWebTest, Pos.CENTER);
 
-        borderPane.setCenter(resultadoWebTest);
-
-        Label resultadoMobtest = new Label();
-        resultadoWebTest.getStyleClass().add("textoLabel");
-        BorderPane.setAlignment(resultadoMobtest, Pos.CENTER);
-
-        borderPane.setCenter(resultadoMobtest);
+        borderPane.setTop(resultadoWebTest);
 
         GridPane gridPane = new GridPane();
         gridPane.setPrefSize(450, 520);
@@ -101,7 +95,7 @@ public class FormFx {
         btnExecutarWeb = new Button("Testes Web");
         btnExecutarWeb.setPrefSize(120, 25);
         btnExecutarWeb.setMnemonicParsing(false);
-        btnExecutarWeb.setTextFill(Color.WHITE);
+        btnExecutarWeb.setTextFill(Color.BLACK);
         btnExecutarWeb.setAlignment(Pos.CENTER);
         btnExecutarWeb.setStyle("-fx-base: #b6e7c9;");
         GridPane.setHalignment(btnExecutarWeb, HPos.CENTER);
@@ -110,7 +104,7 @@ public class FormFx {
         btnExecutarMob = new Button("Testes Mobile");
         btnExecutarMob.setPrefSize(120, 25);
         btnExecutarMob.setMnemonicParsing(false);
-        btnExecutarMob.setTextFill(Color.WHITE);
+        btnExecutarMob.setTextFill(Color.BLACK);
         btnExecutarMob.setAlignment(Pos.CENTER);
         btnExecutarMob.setStyle("-fx-base: #b6e7c9;");
         GridPane.setHalignment(btnExecutarMob, HPos.RIGHT);
@@ -119,7 +113,7 @@ public class FormFx {
         btnExecutarRest = new Button("Testes REST");
         btnExecutarRest.setPrefSize(120, 25);
         btnExecutarRest.setMnemonicParsing(false);
-        btnExecutarRest.setTextFill(Color.WHITE);
+        btnExecutarRest.setTextFill(Color.BLACK);
         btnExecutarRest.setAlignment(Pos.CENTER);
         btnExecutarRest.setStyle("-fx-base: #b6e7c9;");
         GridPane.setHalignment(btnExecutarRest, HPos.LEFT);
@@ -204,7 +198,7 @@ public class FormFx {
                     @Override
                     protected void succeeded() {
                         super.succeeded();
-                        resultadoMobtest.setText("Processo executado");
+                        resultadoWebTest.setText("Processo executado");
                         ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
@@ -214,9 +208,9 @@ public class FormFx {
                         Exception e = (Exception) getException();
                         e.printStackTrace();
 
-                        resultadoMobtest.setText("Ocorreu um erro ao realizar a operação");
+                        resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
                         ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                        resultadoMobtest.setTextFill(Color.RED);
+                        resultadoWebTest.setTextFill(Color.RED);
                     }
 
                 };
@@ -225,9 +219,9 @@ public class FormFx {
             }catch (Exception e){
                 e.printStackTrace();
 
-                resultadoMobtest.setText("Ocorreu um erro ao realizar a operação");
+                resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
                 ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                resultadoMobtest.setTextFill(Color.RED);
+                resultadoWebTest.setTextFill(Color.RED);
             }
         });
 
@@ -259,7 +253,7 @@ public class FormFx {
                     @Override
                     protected void succeeded() {
                         super.succeeded();
-                        btnExecutarRest.setText("Processo executado");
+                        resultadoWebTest.setText("Processo executado");
                         ConsoleLog.getInstance().exibirMensagem("Processo executado");
                     }
 
@@ -269,9 +263,9 @@ public class FormFx {
                         Exception e = (Exception) getException();
                         e.printStackTrace();
 
-                        btnExecutarRest.setText("Ocorreu um erro ao realizar a operação");
+                        resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
                         ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                        btnExecutarRest.setTextFill(Color.RED);
+                        resultadoWebTest.setTextFill(Color.RED);
                     }
 
                 };
@@ -280,9 +274,9 @@ public class FormFx {
             }catch (Exception e){
                 e.printStackTrace();
 
-                btnExecutarRest.setText("Ocorreu um erro ao realizar a operação");
+                resultadoWebTest.setText("Ocorreu um erro ao realizar a operação");
                 ConsoleLog.getInstance().exibirMensagem("Ocorreu um erro ao realizar a operação");
-                btnExecutarRest.setTextFill(Color.RED);
+                resultadoWebTest.setTextFill(Color.RED);
             }
         });
 

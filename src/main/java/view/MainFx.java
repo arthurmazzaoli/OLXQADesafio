@@ -23,8 +23,9 @@ public class MainFx extends Application {
 
         primaryStage.setTitle("Desafio QA - OLX");
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(500);
-        primaryStage.setMinHeight(550);
+        primaryStage.setResizable(false);
+        primaryStage.setWidth(500);
+        primaryStage.setHeight(500);
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.show();
 
