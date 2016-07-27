@@ -7,39 +7,7 @@
     <artifactId>DesafioQA</artifactId>
     <version>1.0</version>
     <build>
-        <sourceDirectory>
-            ${project.basedir}/src
-        </sourceDirectory>
         <plugins>
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>test-reports</id>
-                        <phase>test</phase>
-                        <configuration>
-                            <tasks>
-                                <junitreport todir="target/surefire-reports">
-                                    <fileset dir="target/surefire-reports">
-                                        <include name="**/*.xml"/>
-                                    </fileset>
-                                    <report format="noframes" todir="target/surefire-reports"/>
-                                </junitreport>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>ant</groupId>
-                        <artifactId>ant-junit</artifactId>
-                        <version>1.6.2</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -69,7 +37,7 @@
                             <classpathPrefix>bin/</classpathPrefix>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             <addClasspath>true</addClasspath>
-                            <mainClass>main.java.view.MainFx</mainClass>
+                            <mainClass>view.MainFx</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

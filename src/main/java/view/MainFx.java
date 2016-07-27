@@ -1,4 +1,4 @@
-package main.java.view;
+package view;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -20,8 +20,6 @@ public class MainFx extends Application {
         formFx = new FormFx();
 
         Scene scene = new Scene(formFx.getPanelContent());
-
-        //scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
 
         primaryStage.setTitle("Desafio QA - OLX");
         primaryStage.setScene(scene);

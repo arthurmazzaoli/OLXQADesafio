@@ -1,4 +1,4 @@
-package main.java.view;
+package view;
 
 import javafx.concurrent.Task;
 import javafx.geometry.HPos;
@@ -12,9 +12,9 @@ import javafx.scene.paint.Color;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import test.java.mobileTest.cucumber.features.RunCukesTestMobile;
-import test.java.webTest.cucumber.features.RunCukesTest;
-import test.java.restTest.DesafioQAREST;
+import test.mobileTest.cucumber.features.RunCukesTestMobile;
+import test.webTest.cucumber.features.RunCukesTest;
+import test.restTest.DesafioQAREST;
 
 /**
  * Created by Arthur on 26/07/2016.
