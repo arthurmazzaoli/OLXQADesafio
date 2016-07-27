@@ -8,7 +8,7 @@
     <version>1.0</version>
     <build>
         <sourceDirectory>
-            ${project.basedir}
+            ${project.basedir}/src
         </sourceDirectory>
         <plugins>
             <plugin>
