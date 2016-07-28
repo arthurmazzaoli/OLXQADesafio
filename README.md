@@ -1,6 +1,8 @@
 # desafioQA
 
+=========================   
 Objetivo
+=========================   
 
 Verificar suas habilidades em definir cenários de testes e em programação, necessárias para automatização dos testes.
 
@@ -27,9 +29,9 @@ como executar os testes.
 
 Video com a evidência de execução: http://screencast.com/t/DUWMfKIg6icf
 
------------------
+=========================   
 TESTES WEB e REST
------------------
+=========================   
 
 A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
 
@@ -73,29 +75,19 @@ TESTES ANDROID
 =========================   
 ## 7 - Realizar o download e instalar o Appium (http://appium.io/);
 =========================
-## 8 - Realizar download das bibliotecas do Appium;
-=========================
-    8.1 Acessar site Appium (http://appium.io/)
-=========================    
-    8.2 Selecionar Documentation > Master
-=========================    
-    8.3 Selecionar Java Bindings
-=========================    
-    8.4 Realizar download Java_Client
-========================= 
 ## 9 - Na pasta de instalação do Android SDK, acessar o AVD Manager;
     9.1 Criar o dispositivo virutal do Android com as seguintes configurações
 =========================    
- AVD NAME: Nexus
- DEVICE: Nexus 4
- TARGET: Android 4.4.2 - API Level 19
- CPU/ABI:ARM(armeabi-v7a)
- Memory RAM: 1907
- Internal Storage: 512
+### AVD NAME: Nexus
+### DEVICE: Nexus 4
+### TARGET: Android 4.4.2 - API Level 19
+### CPU/ABI:ARM(armeabi-v7a)
+### Memory RAM: 1907
+### Internal Storage: 512
  
-----------
+=========================   
 RELATÓRIOS
-----------
+=========================   
 
  O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
  
