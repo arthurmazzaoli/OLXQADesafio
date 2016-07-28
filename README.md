@@ -22,15 +22,15 @@ Adicionar uma rotina para execução dos testes automaticamente
 Vamos executar seu programa em um Mac OS X ou alguma distribuição Linux. Para isso, forneça um arquivo README explicando:
 como executar os testes.
 
------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
-INSTRUÇÕES
+TESTES WEB e REST
 
 A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
 
-TESTES ANDROID
+Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Testes Web e Testes Mobile.
 
-
+Após a execução de cada teste, ele irá logar o resultado no console.
 
 TESTES ANDROID
 
@@ -69,3 +69,11 @@ TESTES ANDROID
  CPU/ABI:ARM(armeabi-v7a)
  Memory RAM: 1907
  Internal Storage: 512
+ 
+ RELATÓRIOS
+ 
+ O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
+ 
+ O relatório de execução da aplicação Mobile, é salvo na pasta: files\jar\target\Destination\mobile.
+ 
+ Para visualizar, basta abrir o arquivo index.html dentro de cada diretório. 
