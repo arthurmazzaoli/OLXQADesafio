@@ -1,8 +1,6 @@
 package test.mobileTest.cucumber.features;
 
 import static test.mobileTest.appium.utils.Constant.getPathDriver;
-import static test.webTest.cucumber.features.Step_DesafioOLX.driver;
-
 import java.io.File;
 import java.net.URL;
 import cucumber.api.java.Before;
@@ -64,7 +62,6 @@ public class Step_DesafioOLXMobile {
     public void validarDirecionamentoListaEstados() {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-
         common.aguardarElementoByXpath(PageObjects_PaginaInicial.XPATHLISTAREGIAO);
 
     }
@@ -84,7 +81,6 @@ public class Step_DesafioOLXMobile {
     public void validarDirecionamentoListagemDDDRegioes() throws InterruptedException {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-
         common.aguardarElementoByXpath(PageObjects_PaginaInicial.XPATHDDD21);
 
     }
@@ -93,7 +89,6 @@ public class Step_DesafioOLXMobile {
     public void pressionarDDDRiodeJaneiro() throws InterruptedException {
 
         Interactions_TelaInicial paginainicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
-
         paginainicial.pressionarBtnSelecionarDDD21();
 
     }
@@ -102,15 +97,13 @@ public class Step_DesafioOLXMobile {
     public void verificarMensagemFiltro(String msg) throws Exception {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-
         common.aguardarElementoById(PageObjects_TelaBusca.IDMSGFILTRO);
-
         Assert.assertEquals(driver.findElement(By.id(PageObjects_TelaBusca.IDMSGFILTRO)).getText(), msg);
 
     }
 
     @Quando("^clico em OK$")
-    public void clico_em_OK() {
+    public void pressionarBotaoOK() {
 
         Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
         CommonPageObjects common = new CommonPageObjects(driver);
@@ -121,7 +114,7 @@ public class Step_DesafioOLXMobile {
     }
 
     @E("^clico na lupa de pesquisa$")
-    public void clico_na_lupa_de_pesquisa() {
+    public void pressionarLupadePesquisa() {
 
         Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
         CommonPageObjects common = new CommonPageObjects(driver);
@@ -142,12 +135,10 @@ public class Step_DesafioOLXMobile {
 
     }
 
-
     @Entao("^sou direcionado para a listagem de produtos$")
     public void validarDirecionamentoTelaProdutos() {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-
         //Aguardo a tela de busca renderizar
         common.aguardarElementoById(PageObjects_TelaBusca.IDTELABUSCA);
 
