@@ -81,9 +81,12 @@ TESTES ANDROID
 RELATÓRIOS
 ----------
 
- 
  O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
  
  O relatório de execução da aplicação Mobile, é salvo na pasta: files\jar\target\Destination\mobile.
  
+ ![screen shot](http://arthurmazza.azurewebsites.net/path_relatorio.PNG)
+ 
  Para visualizar, basta abrir o arquivo index.html dentro de cada diretório. 
+ 
+  ![screen shot](http://arthurmazza.azurewebsites.net/relatorio.PNG)
