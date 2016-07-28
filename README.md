@@ -47,8 +47,8 @@ O exemplo abaixo refere-se aos testes de GET e POST da API Rest:
 TESTES ANDROID
 --------------
 
-1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;
-    1.1 - Acessar https://www.genymotion.com/;
+[1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;] [1]
+[    1.1 - Acessar https://www.genymotion.com/;] [2]
     
 2 - Realizar download e instalar o JDK 1.8;
 
