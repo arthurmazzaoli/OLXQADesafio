@@ -1,6 +1,8 @@
 # desafioQA
 
+=========================   
 Objetivo
+=========================   
 
 Verificar suas habilidades em definir cenários de testes e em programação, necessárias para automatização dos testes.
 
@@ -25,11 +27,15 @@ como executar os testes.
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
------------------
-TESTES WEB e REST
------------------
+Video com a evidência de execução: http://screencast.com/t/DUWMfKIg6icf
 
-A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
+=========================   
+TESTES WEB e REST
+=========================   
+
+## Instruções para execução automática dos testes
+
+A pasta files/jar localizada na raiz do repositóprio, contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
 
 Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Testes Web e Testes Mobile.
 
@@ -41,49 +47,49 @@ O exemplo abaixo refere-se aos testes de GET e POST da API Rest:
 
 ![screen shot](http://arthurmazza.azurewebsites.net/teste_apiREST.PNG)
 
---------------
+=========================
 TESTES ANDROID
---------------
+=========================
 
-1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;
-    1.1 - Acessar https://www.genymotion.com/;
-    
-2 - Realizar download e instalar o JDK;
-
-3 - Criar as váriáveis de ambiente JAVA_HOME e o PATH;
-
-4 - Realizar Download e instalar o Android SDK;
-
-5 - Criar a váriavel de ambiente do ANDROID_HOME;
-
-6 - Acessar o SDK Manager na pasta de instalação do passo 3 e atualizar o Android;
-   6.1 Abrir o SDK Manager;
-   6.2 Selecionar as opções 
-      6.2.1 Ramificação Tools: Android SDK Tool, Android SDK Platform-tools e Android SDK Build-tools (desmarcar todas as outras opções desta ramificação Tools);
-      6.2.2 Ramificação Android 4.4.2 (Api 19) : SDK Platform e ARM EABI v7a System Image;
-      6.2.3 Selecionar o botão Install packages;
-   
-7 - Realizar o download e instalar o Appium (http://appium.io/);
-
-8 - Realizar download das bibliotecas do Appium;
-    8.1 Acessar site Appium (http://appium.io/)
-    8.2 Selecionar Documentation > Master
-    8.3 Selecionar Java Bindings
-    8.4 Realizar download Java_Client
+## 1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;
+=========================
+       1.1 - Acessar https://www.genymotion.com/;
+=========================    
+## 2 - Realizar download e instalar o JDK 1.8;
+=========================
+## 3 - Criar a váriável de ambiente JAVA_HOME apontando para o caminho de instalação do JDK, exempo: JAVA_HOME: C:\Program Files\Java\jdk1.8.0_91\bin;
+=========================
+## 4 - Realizar Download e instalar o Android SDK;
+=========================
+## 5 - Criar a váriavel de ambiente do ANDROID_HOME;
+=========================
+## 6 - Acessar o SDK Manager na pasta de instalação do passo 4 e atualizar o Android;
+=========================
+    6.1 Abrir o SDK Manager;
+=========================    
+    6.2 Selecionar as opções 
+=========================    
+    6.2.1 Ramificação Tools: Android SDK Tool, Android SDK Platform-tools e Android SDK Build-tools (desmarcar todas as outras opções desta ramificação Tools);
+=========================    
+    6.2.2 Ramificação Android 4.4.2 (Api 19) : SDK Platform e ARM EABI v7a System Image;
+=========================    
+    6.2.3 Selecionar o botão Install packages;
+=========================   
+## 7 - Realizar o download e instalar o Appium (http://appium.io/);
+=========================
+## 8 - Na pasta de instalação do Android SDK, acessar o AVD Manager;
+    8.1 Criar o dispositivo virutal do Android com as seguintes configurações
+=========================    
+### AVD NAME: Nexus
+### DEVICE: Nexus 4
+### TARGET: Android 4.4.2 - API Level 19
+### CPU/ABI:ARM(armeabi-v7a)
+### Memory RAM: 2048
+### Internal Storage: 512
  
-9 - Na pasta de instalação do Android SDK, acessar o AVD Manager;
-    9.1 Criar o dispositivo virutal do Android com as seguintes configurações
-    
- AVD NAME: Nexus
- DEVICE: Nexus 4
- TARGET: Android 4.4.2 - API Level 19
- CPU/ABI:ARM(armeabi-v7a)
- Memory RAM: 1907
- Internal Storage: 512
- 
-----------
+=========================   
 RELATÓRIOS
-----------
+=========================   
 
  O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
  
