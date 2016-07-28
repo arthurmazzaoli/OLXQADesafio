@@ -14,7 +14,7 @@ import test.webTest.webdriver.pageObjects.PageObjects_TelaInicial;
 import test.webTest.webdriver.pageObjects.PageObjects_TelaLogin;
 import test.webTest.webdriver.utils.Constant;
 import test.webTest.webdriver.interactions.*;
-import static test.webTest.webdriver.pageObjects.PageObjects_TelaLogin.XpathUsuarioLogado;
+import static test.webTest.webdriver.pageObjects.PageObjects_TelaLogin.XPATHUSUARIOLOGADO;
 import static test.webTest.webdriver.utils.Constant.getPathDriver;
 
 /**
@@ -49,7 +49,7 @@ public class Step_DesafioOLX {
     public void verificarExistenciaCampoMinhaConta() {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificaExistenciaComponenteByCss(PageObjects_TelaInicial.CssLinkLogin);
+        common.aguardarElementoByCssSelector(PageObjects_TelaInicial.CSSLINKLOGIN);
 
     }
 
@@ -57,7 +57,7 @@ public class Step_DesafioOLX {
     public void pressionarBotaoMinhaConta() {
 
         Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
-        paginaInicial.clickBtnMinhaConta();
+        paginaInicial.pressionarBtnMinhaConta();
 
     }
 
@@ -65,7 +65,7 @@ public class Step_DesafioOLX {
     public void validarDirecionamentoTelaLogin(String URL) throws Exception {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificarPaginaAtualURL(URL);
+        common.verificarPaginaAtualURL(URL);
 
     }
 
@@ -73,8 +73,8 @@ public class Step_DesafioOLX {
     public void VerificarExistenciaCampoLoginSenha() {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificaExistenciaComponenteById(PageObjects_TelaLogin.IdCampoLogin);
-        common.VerificaExistenciaComponenteById(PageObjects_TelaLogin.IdCampoSenha);
+        common.aguardarElementoById(PageObjects_TelaLogin.IDCAMPOLOGIN);
+        common.aguardarElementoById(PageObjects_TelaLogin.IDCAMPOSENHA);
 
     }
 
@@ -97,7 +97,10 @@ public class Step_DesafioOLX {
     @E("^Pressiono o botao Entrar$")
     public void PressionaBotaoEntrar() {
 
+        CommonPageObjects common = new CommonPageObjects(driver);
         Interactions_TelaLogin paginaLogin = PageFactory.initElements(driver, Interactions_TelaLogin.class);
+
+        common.aguardarElementoById(PageObjects_TelaLogin.IDBOTAOENTRAR);
         paginaLogin.pressionarBotaoEntrar();
 
     }
@@ -106,7 +109,7 @@ public class Step_DesafioOLX {
     public void verificarDirecionamentoTelaUsuarioLogado() {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificaExistenciaComponenteByXpath(XpathUsuarioLogado);
+        common.aguardarElementByXpath(XPATHUSUARIOLOGADO);
         driver.close();
         driver.quit();
 

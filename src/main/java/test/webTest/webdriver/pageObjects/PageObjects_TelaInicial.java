@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
  */
 public class PageObjects_TelaInicial {
 
-    public static final String CssLinkLogin = "a[href=\"https://www3.olx.com.br/account/form_login\"]";
+    public static final String CSSLINKLOGIN = "a[href=\"https://www3.olx.com.br/account/form_login\"]";
 
-    @FindBy(css = CssLinkLogin)
+    @FindBy(css = CSSLINKLOGIN)
     protected WebElement BtnMinhaConta;
 
 }

@@ -8,22 +8,22 @@ import org.openqa.selenium.support.FindBy;
  */
 public class PageObjects_TelaLogin {
 
-    public static final String IdCampoLogin = "login_email";
-    public static final String IdCampoSenha = "login_password";
-    public static final String IdCampoBusca = "navbar_searchad";
-    public static final String IdBotaoEntrar = "bt_submit_login";
-    public static final String XpathUsuarioLogado = "//h2[contains(.,'Bem vindo(a), desafioolxqa!')]";
+    public static final String IDCAMPOLOGIN = "login_email";
+    public static final String IDCAMPOSENHA = "login_password";
+    public static final String IDCAMPOBUSCA = "navbar_searchad";
+    public static final String IDBOTAOENTRAR = "bt_submit_login";
+    public static final String XPATHUSUARIOLOGADO = "//h2[contains(.,'Bem vindo(a), desafioolxqa!')]";
 
-    @FindBy(id = IdCampoLogin)
+    @FindBy(id = IDCAMPOLOGIN)
     protected WebElement textLogin;
 
-    @FindBy(id = IdCampoSenha)
+    @FindBy(id = IDCAMPOSENHA)
     protected WebElement textSenha;
 
-    @FindBy(id = IdCampoBusca)
+    @FindBy(id = IDCAMPOBUSCA)
     protected WebElement linkBuscar;
 
-    @FindBy(id = IdBotaoEntrar)
+    @FindBy(id = IDBOTAOENTRAR)
     protected WebElement btnEntrar;
 
 }

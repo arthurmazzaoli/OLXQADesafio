@@ -25,7 +25,7 @@ public class MainFx extends Application {
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.setWidth(500);
-        primaryStage.setHeight(500);
+        primaryStage.setHeight(350);
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.show();
 

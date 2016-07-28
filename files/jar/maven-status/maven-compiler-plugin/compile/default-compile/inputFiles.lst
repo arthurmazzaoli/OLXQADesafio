@@ -4,6 +4,7 @@ C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\comm
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\webdriver\pageObjects\PageObjects_TelaLogin.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\view\FormFx.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\cucumber\features\Step_DesafioOLX.java
+C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\interactions\Interactions_TelaBusca.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\pageObjects\PageObjects_PaginaInicial.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\webdriver\interactions\Interactions_TelaLogin.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\cucumber\features\RunCukesTestMobile.java
@@ -16,3 +17,4 @@ C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\inte
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\cucumber\features\RunCukesTest.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\view\ConsoleLog.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\restTest\DesafioQAREST.java
+C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\pageObjects\PageObjects_TelaBusca.java

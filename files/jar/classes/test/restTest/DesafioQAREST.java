@@ -44,6 +44,7 @@ public class DesafioQAREST {
 
         System.out.println(allHeaders);
         System.out.println(response.getBody().print());
+        System.out.println("1 - Post realizado com sucesso!");
     }
 
     @Test
@@ -66,6 +67,7 @@ public class DesafioQAREST {
 
         System.out.println(allHeaders);
         System.out.println(response.getBody().print());
+        System.out.println("2 - Post realizado com sucesso!");
     }
 
 }

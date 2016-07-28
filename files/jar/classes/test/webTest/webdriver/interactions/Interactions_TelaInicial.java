@@ -7,7 +7,7 @@ import test.webTest.webdriver.pageObjects.PageObjects_TelaInicial;
  */
 public class Interactions_TelaInicial extends PageObjects_TelaInicial {
 
-    public void clickBtnMinhaConta()
+    public void pressionarBtnMinhaConta()
     {
         BtnMinhaConta.click();
     }

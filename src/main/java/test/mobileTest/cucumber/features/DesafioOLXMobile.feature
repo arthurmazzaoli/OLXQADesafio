@@ -11,6 +11,6 @@ Funcionalidade: Pesquisa de produto
     Entao sou direcionado para a listagem de regioes e DDD
     Quando clico em DDD Rio de Janeiro e regiao
     Entao sou direcionado para a tela de ofertas
-    E digito o "produto"
+    E digito o "ford fusion"
     E pressiono o botao buscar
     Entao sou direcionado para a listagem de produtos

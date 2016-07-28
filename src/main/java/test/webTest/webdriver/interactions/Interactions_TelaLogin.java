@@ -7,7 +7,7 @@ import test.webTest.webdriver.pageObjects.PageObjects_TelaLogin;
  */
 public class Interactions_TelaLogin extends PageObjects_TelaLogin {
 
-    public void clickLinkBuscar()
+    public void pressionarLinkBuscar()
     {
         linkBuscar.click();
     }

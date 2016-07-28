@@ -1,6 +1,7 @@
 package test.mobileTest.appium.interactions;
 
 
+import org.openqa.selenium.WebElement;
 import test.mobileTest.appium.pageObjects.PageObjects_PaginaInicial;
 
 /**
@@ -8,18 +9,34 @@ import test.mobileTest.appium.pageObjects.PageObjects_PaginaInicial;
  */
 public class Interactions_TelaInicial extends PageObjects_PaginaInicial{
 
-    public void clickBtnSelecionarEstado()
+    public void pressionarBtnSelecionarEstado()
     {
         btnSelecionarEstado.click();
     }
 
-    public void clickBtnSelecionarEstadoRiodeJaneiro()
+    public WebElement buscarBtnSelecionarEstado()
+    {
+        return btnSelecionarEstado;
+    }
+
+    public void pressionarBtnSelecionarEstadoRiodeJaneiro()
     {
         btnSelecionarEstadoRiodeJaneiro.click();
     }
 
-    public void clickBtnSelecionarDDD21()
+    public WebElement buscarBtnSelecionarEstadoRiodeJaneiro()
+    {
+        return btnSelecionarEstadoRiodeJaneiro;
+    }
+
+    public void pressionarBtnSelecionarDDD21()
     {
         btnSelecionarDDD21.click();
     }
+
+    public WebElement buscarBtnSelecionarDDD21()
+    {
+        return btnSelecionarDDD21;
+    }
+
 }

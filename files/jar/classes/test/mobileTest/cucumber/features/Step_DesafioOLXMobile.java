@@ -13,9 +13,11 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 import org.openqa.selenium.support.PageFactory;
+import test.mobileTest.appium.interactions.Interactions_TelaBusca;
 import test.mobileTest.appium.interactions.Interactions_TelaInicial;
 import test.mobileTest.appium.commonMethods.CommonPageObjects;
 import test.mobileTest.appium.pageObjects.PageObjects_PaginaInicial;
+import test.mobileTest.appium.pageObjects.PageObjects_TelaBusca;
 
 public class Step_DesafioOLXMobile {
 
@@ -25,7 +27,7 @@ public class Step_DesafioOLXMobile {
     @Before
     public void setUp() throws Exception {
 
-        if(driver == null) {
+        if (driver == null) {
             File diretorio = new File(getPathDriver());
             File app = new File(diretorio, "olx.apk");
 
@@ -38,73 +40,92 @@ public class Step_DesafioOLXMobile {
         }
     }
 
-
     @Dado("^que o campo estado esteja visivel na tela inicial do aplicativo$")
-    public void que_o_campo_estado_esteja_visivel_na_tela_inicial_do_aplicativo() throws InterruptedException {
+    public void verificarExistenciaCampoEstado() {
+
+        CommonPageObjects common = new CommonPageObjects(driver);
+        common.aguardarElementoById(PageObjects_PaginaInicial.IDSELECIONARESTADO);
 
     }
 
     @E("^eu pressione o botão estado$")
-    public void eu_pressione_o_botão_estado() {
-
-        CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificaExistenciaComponenteById(PageObjects_PaginaInicial.IDSELECIONARESTADO);
+    public void pressionarBotaoEstado() {
 
         Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
-        paginaInicial.clickBtnSelecionarEstado();
+        paginaInicial.pressionarBtnSelecionarEstado();
 
     }
 
     @Entao("^sou direcionato para a lista de estados$")
-    public void sou_direcionato_para_a_lista_de_estados() {
+    public void validarDirecionamentoListaEstados() {
 
+        //Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
+        //CommonPageObjects common = new CommonPageObjects(driver);
+        //Thread.sleep(20000);;
+        //common.aguardaExistenciaComponenteByWebElement(paginaInicial.buscaListaEstados());
 
     }
 
     @Quando("^clico em Rio de Janeiro$")
-    public void clico_em_Rio_de_Janeiro() {
+    public void pressionarRiodeJaneiro() {
 
         CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificaExistenciaComponenteById(PageObjects_PaginaInicial.IDRIODEJANEIRO);
-
         Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
-        paginaInicial.clickBtnSelecionarEstadoRiodeJaneiro();
+
+        common.aguardarElementoByXpath(PageObjects_PaginaInicial.XPATHRIODEJANEIRO);
+        paginaInicial.pressionarBtnSelecionarEstadoRiodeJaneiro();
 
     }
 
     @Entao("^sou direcionado para a listagem de regioes e DDD$")
-    public void sou_direcionado_para_a_listagem_de_regioes_e_DDD() {
+    public void validarDirecionamentoListagemDDDRegioes() throws InterruptedException {
+
+        CommonPageObjects common = new CommonPageObjects(driver);
+
+        common.aguardarElementoByXpath(PageObjects_PaginaInicial.XPATHDDD21);
 
     }
 
     @Quando("^clico em DDD Rio de Janeiro e regiao$")
-    public void clico_em_DDD_Rio_de_Janeiro_e_regiao() {
+    public void pressionarDDDRiodeJaneiro() throws InterruptedException {
 
+        Interactions_TelaInicial paginainicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
+        Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
         CommonPageObjects common = new CommonPageObjects(driver);
-        common.VerificaExistenciaComponenteById(PageObjects_PaginaInicial.IDDDD21);
 
-        Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
-        paginaInicial.clickBtnSelecionarDDD21();
+        paginainicial.pressionarBtnSelecionarDDD21();
+        common.aguardarElementoByXpath(PageObjects_TelaBusca.XPATHBTNOK);
+        paginabusca.pressionarBtnOKEntendi();
 
     }
 
     @Entao("^sou direcionado para a tela de ofertas$")
-    public void sou_direcionado_para_a_tela_de_ofertas() {
+    public void validarDirecionamentoTelaOfertas() {
 
     }
 
     @E("^digito o \"([^\"]*)\"$")
-    public void digito_o(String arg1) {
+    public void digitarProduto(String produto) throws InterruptedException {
+
+        Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
+        CommonPageObjects common = new CommonPageObjects(driver);
+
+        common.aguardarElementoById(PageObjects_TelaBusca.IDBUSCAR);
+        paginabusca.pressionarBtnBuscar();
+
+        common.aguardarElementoById(PageObjects_TelaBusca.IDCAIXATXT);
+        paginabusca.digitarProdutoCaixaTxt(produto);
 
     }
 
     @E("^pressiono o botao buscar$")
-    public void pressiono_o_botao_buscar() {
+    public void pressionarBotaoBuscar() throws InterruptedException {
+
 
     }
 
     @Entao("^sou direcionado para a listagem de produtos$")
-    public void sou_direcionado_para_a_listagem_de_produtos() {
+    public void validarDirecionamentoTelaProdutos() {
 
     }
 }

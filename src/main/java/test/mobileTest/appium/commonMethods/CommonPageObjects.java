@@ -24,7 +24,7 @@ public class CommonPageObjects {
 
     }
 
-    public void VerificarPaginaAtualURL(String URL) throws Exception {
+    public void verificarPaginaAtualURL(String URL) throws Exception {
 
         try {
 
@@ -37,23 +37,20 @@ public class CommonPageObjects {
         }
     }
 
-    public void VerificaExistenciaComponenteByCss(String locator) {
+    public void fluentWaitElementoByCss(String locator) {
 
-        waitElementByCssSelector(locator);
         fluentWait(driver.findElement(By.cssSelector(locator)));
 
     }
 
-    public void VerificaExistenciaComponenteById(String locator) {
+    public void fluentWaitElementoById(String locator) {
 
-        waitElementById(locator);
         fluentWait(driver.findElement(By.id(locator)));
 
     }
 
-    public void VerificaExistenciaComponenteByXpath(String locator) {
+    public void fluentWaitElementoByXpath(String locator) {
 
-        waitElementById(locator);
         fluentWait(driver.findElement(By.xpath(locator)));
 
     }
@@ -73,42 +70,27 @@ public class CommonPageObjects {
         return button;
     }
 
-    private boolean waitElementByXpath(String locator) {
+    public void aguardarElementoByXpath(String locator) {
 
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
-
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+                .xpath(locator)));
     }
 
-    private boolean waitElementById(String locator) {
+    public void aguardarElementoById(String locator) {
 
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
-
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+                .id(locator)));
     }
 
-    private boolean waitElementByCssSelector(String locate) {
+    public void aguardarElementoByCssSelector(String locator) {
 
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locate)));
-
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+                .cssSelector(locator)));
     }
 }

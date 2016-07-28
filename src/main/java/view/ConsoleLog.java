@@ -1,6 +1,5 @@
 package view;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,6 +28,7 @@ public class ConsoleLog {
 
     private static ConsoleLog instance = null;
     public static synchronized ConsoleLog  getInstance(){
+
         if(instance == null){
             instance = new ConsoleLog();
         }

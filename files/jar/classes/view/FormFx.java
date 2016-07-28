@@ -15,6 +15,7 @@ import org.junit.runner.notification.Failure;
 import test.mobileTest.cucumber.features.RunCukesTestMobile;
 import test.webTest.cucumber.features.RunCukesTest;
 import test.restTest.DesafioQAREST;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -43,13 +44,12 @@ public class FormFx {
         panelContent.setPrefSize(480, 540);
         panelContent.getStyleClass().add("basePanel");
         BorderPane.setAlignment(panelContent, Pos.CENTER);
-
         criarFormPanel();
 
     }
 
 
-    public void criarFormPanel(){
+    public void criarFormPanel() {
 
         BorderPane borderPane = new BorderPane();
         borderPane.setLayoutX(30);
@@ -60,6 +60,10 @@ public class FormFx {
         AnchorPane.setTopAnchor(borderPane, 0.0);
         panelContent.getChildren().add(borderPane);
 
+        Label espacamentoInicial = new Label();
+        BorderPane.setAlignment(espacamentoInicial, Pos.CENTER);
+        borderPane.setTop(espacamentoInicial);
+
         Label subTituloFuncaoLabel = new Label();
         subTituloFuncaoLabel.setLayoutX(25.0);
         subTituloFuncaoLabel.setLayoutY(8.0);
@@ -68,23 +72,14 @@ public class FormFx {
         subTituloFuncaoLabel.setText("Bem vindo ao programa Desafio QA-OLX - by Arthur Mazza");
         subTituloFuncaoLabel.getStyleClass().add("textoLabelSubTitulo");
         BorderPane.setAlignment(subTituloFuncaoLabel, Pos.TOP_CENTER);
-
         borderPane.setCenter(subTituloFuncaoLabel);
 
-        Label espacamento = new Label();
-        espacamento.getStyleClass().add("textoLabel");
-        BorderPane.setAlignment(espacamento, Pos.CENTER);
-        borderPane.setTop(espacamento);
-
         Label resultado = new Label();
-        resultado.getStyleClass().add("textoLabel");
         BorderPane.setAlignment(resultado, Pos.CENTER);
 
         GridPane gridPane = new GridPane();
         gridPane.setPrefSize(450, 520);
-        gridPane.getStyleClass().add("basePanel");
         BorderPane.setAlignment(gridPane, Pos.CENTER);
-
         borderPane.setBottom(gridPane);
 
         ColumnConstraints ColumnConstraints = new ColumnConstraints(10, 100, Region.USE_COMPUTED_SIZE);
@@ -93,6 +88,7 @@ public class FormFx {
 
         RowConstraints linhaConsole = new RowConstraints(10, 148, 172);
         linhaConsole.setVgrow(Priority.SOMETIMES);
+
         RowConstraints rowConstraints = new RowConstraints(10, 50, 93);
         rowConstraints.setVgrow(Priority.SOMETIMES);
 
@@ -181,7 +177,7 @@ public class FormFx {
                 };
                 new Thread(task).start();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
 
                 resultado.setText("Ocorreu um erro ao realizar a operação");
@@ -241,7 +237,7 @@ public class FormFx {
                 };
                 new Thread(task).start();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
 
                 resultado.setText("Ocorreu um erro ao realizar a operação");
@@ -301,7 +297,7 @@ public class FormFx {
                 };
                 new Thread(task).start();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
 
                 resultado.setText("Ocorreu um erro ao realizar a operação");
@@ -318,51 +314,37 @@ public class FormFx {
 
         int columnsOver = 0;
 
-                this.getTxtAreaConsole().appendText(message + "\n");
+        this.getTxtAreaConsole().appendText(message + "\n");
 
-                this.getTxtAreaConsole().setPrefRowCount(this.getTxtAreaConsole().prefRowCountProperty().get());
+        this.getTxtAreaConsole().setPrefRowCount(this.getTxtAreaConsole().prefRowCountProperty().get());
 
-                if (message.length() > this.getTxtAreaConsole().getPrefColumnCount()) {
-                    columnsOver = message.length();
-                    this.getTxtAreaConsole().setPrefColumnCount(columnsOver);
-                }
+        if (message.length() > this.getTxtAreaConsole().getPrefColumnCount()) {
+            columnsOver = message.length();
+            this.getTxtAreaConsole().setPrefColumnCount(columnsOver);
+        }
 
-                this.getTxtAreaConsole().positionCaret(this.getTxtAreaConsole().getText().length());
+        this.getTxtAreaConsole().positionCaret(this.getTxtAreaConsole().getText().length());
 
     }
 
+    public void limparConsole() {
 
-    public void limparConsole(){
         this.getTxtAreaConsole().setText("");
 
     }
 
-
     public AnchorPane getPanelContent() {
+
         return panelContent;
     }
 
-    public void setPanelContent(AnchorPane panelContent) {
-        this.panelContent = panelContent;
-    }
-
-    public Button getBtnExecutarWeb() {
-        return btnExecutarWeb;
-    }
-
-    public void setBtnExecutarWeb(Button btnExecutarWeb) {
-        this.btnExecutarWeb = btnExecutarWeb;
-    }
-
     public TextArea getTxtAreaConsole() {
+
         return txtAreaConsole;
     }
 
-    public void setTxtAreaConsoleWeb(TextArea txtAreaConsoleWeb) {
-        this.txtAreaConsole = txtAreaConsoleWeb;
-    }
-
     public void start() {
+
         if (capturing) {
             return;
         }
@@ -379,6 +361,7 @@ public class FormFx {
     }
 
     private static class OutputStreamCombiner extends OutputStream {
+
         private List<OutputStream> outputStreams;
 
         public OutputStreamCombiner(List<OutputStream> outputStreams) {

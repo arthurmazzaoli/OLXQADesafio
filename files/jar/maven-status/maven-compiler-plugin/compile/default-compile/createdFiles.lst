@@ -2,6 +2,7 @@ test\mobileTest\appium\interactions\Interactions_TelaInicial.class
 test\mobileTest\appium\pageObjects\PageObjects_PaginaInicial.class
 view\FormFx$1.class
 test\webTest\webdriver\utils\Constant.class
+test\mobileTest\appium\interactions\Interactions_TelaBusca.class
 test\webTest\webdriver\pageObjects\PageObjects_TelaLogin.class
 test\webTest\cucumber\features\RunCukesTest.class
 test\mobileTest\cucumber\features\Step_DesafioOLXMobile.class
@@ -18,6 +19,7 @@ view\FormFx$3.class
 view\FormFx.class
 test\webTest\webdriver\commonMethods\CommonPageObjects$1.class
 view\FormFx$OutputStreamCombiner.class
+test\mobileTest\appium\pageObjects\PageObjects_TelaBusca.class
 test\mobileTest\appium\utils\Constant.class
 view\FormFx$2.class
 test\mobileTest\cucumber\features\RunCukesTestMobile.class
