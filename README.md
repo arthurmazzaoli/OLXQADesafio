@@ -53,7 +53,7 @@ TESTES ANDROID
 2 - Realizar download e instalar o JDK 1.8;
 
 3 - Criar a váriável de ambiente JAVA_HOME apontando para o caminho de instalação do JDK, exempo:
-    - JAVA_HOME: C:\Program Files\Java\jdk1.8.0_91\bin;
+    JAVA_HOME: C:\Program Files\Java\jdk1.8.0_91\bin;
 
 4 - Realizar Download e instalar o Android SDK;
 
