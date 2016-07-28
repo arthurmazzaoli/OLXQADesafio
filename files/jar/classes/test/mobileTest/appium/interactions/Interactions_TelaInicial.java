@@ -34,9 +34,14 @@ public class Interactions_TelaInicial extends PageObjects_PaginaInicial{
         btnSelecionarDDD21.click();
     }
 
-    public WebElement buscarBtnSelecionarDDD21()
-    {
+    public WebElement buscarBtnSelecionarDDD21() {
         return btnSelecionarDDD21;
+    }
+
+    public WebElement buscarCampoRegiaoEstado() {
+
+        return lblRegiaoEstados;
+
     }
 
 }

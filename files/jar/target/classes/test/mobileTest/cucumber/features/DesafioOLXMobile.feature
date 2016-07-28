@@ -10,7 +10,8 @@ Funcionalidade: Pesquisa de produto
     Quando clico em Rio de Janeiro
     Entao sou direcionado para a listagem de regioes e DDD
     Quando clico em DDD Rio de Janeiro e regiao
-    Entao sou direcionado para a tela de ofertas
+    Entao o sistema exibe a mensagem "Selecione aqui a cidade e bairros desejados"
+    Quando clico em OK
+    E clico na lupa de pesquisa
     E digito o "ford fusion"
-    E pressiono o botao buscar
     Entao sou direcionado para a listagem de produtos

@@ -1,6 +1,8 @@
 package test.mobileTest.cucumber.features;
 
 import static test.mobileTest.appium.utils.Constant.getPathDriver;
+import static test.webTest.cucumber.features.Step_DesafioOLX.driver;
+
 import java.io.File;
 import java.net.URL;
 import cucumber.api.java.Before;
@@ -8,6 +10,8 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -59,10 +63,9 @@ public class Step_DesafioOLXMobile {
     @Entao("^sou direcionato para a lista de estados$")
     public void validarDirecionamentoListaEstados() {
 
-        //Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
-        //CommonPageObjects common = new CommonPageObjects(driver);
-        //Thread.sleep(20000);;
-        //common.aguardaExistenciaComponenteByWebElement(paginaInicial.buscaListaEstados());
+        CommonPageObjects common = new CommonPageObjects(driver);
+
+        common.aguardarElementoByXpath(PageObjects_PaginaInicial.XPATHLISTAREGIAO);
 
     }
 
@@ -90,17 +93,41 @@ public class Step_DesafioOLXMobile {
     public void pressionarDDDRiodeJaneiro() throws InterruptedException {
 
         Interactions_TelaInicial paginainicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
+
+        paginainicial.pressionarBtnSelecionarDDD21();
+
+    }
+
+    @Entao("^o sistema exibe a mensagem \"([^\"]*)\"$")
+    public void verificarMensagemFiltro(String msg) throws Exception {
+
+        CommonPageObjects common = new CommonPageObjects(driver);
+
+        common.aguardarElementoById(PageObjects_TelaBusca.IDMSGFILTRO);
+
+        Assert.assertEquals(driver.findElement(By.id(PageObjects_TelaBusca.IDMSGFILTRO)).getText(), msg);
+
+    }
+
+    @Quando("^clico em OK$")
+    public void clico_em_OK() {
+
         Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
         CommonPageObjects common = new CommonPageObjects(driver);
 
-        paginainicial.pressionarBtnSelecionarDDD21();
         common.aguardarElementoByXpath(PageObjects_TelaBusca.XPATHBTNOK);
         paginabusca.pressionarBtnOKEntendi();
 
     }
 
-    @Entao("^sou direcionado para a tela de ofertas$")
-    public void validarDirecionamentoTelaOfertas() {
+    @E("^clico na lupa de pesquisa$")
+    public void clico_na_lupa_de_pesquisa() {
+
+        Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
+        CommonPageObjects common = new CommonPageObjects(driver);
+
+        common.aguardarElementoById(PageObjects_TelaBusca.IDBUSCAR);
+        paginabusca.pressionarBtnBuscar();
 
     }
 
@@ -110,22 +137,19 @@ public class Step_DesafioOLXMobile {
         Interactions_TelaBusca paginabusca = PageFactory.initElements(driver, Interactions_TelaBusca.class);
         CommonPageObjects common = new CommonPageObjects(driver);
 
-        common.aguardarElementoById(PageObjects_TelaBusca.IDBUSCAR);
-        paginabusca.pressionarBtnBuscar();
-
         common.aguardarElementoById(PageObjects_TelaBusca.IDCAIXATXT);
         paginabusca.digitarProdutoCaixaTxt(produto);
 
     }
 
-    @E("^pressiono o botao buscar$")
-    public void pressionarBotaoBuscar() throws InterruptedException {
-
-
-    }
 
     @Entao("^sou direcionado para a listagem de produtos$")
     public void validarDirecionamentoTelaProdutos() {
+
+        CommonPageObjects common = new CommonPageObjects(driver);
+
+        //Aguardo a tela de busca renderizar
+        common.aguardarElementoById(PageObjects_TelaBusca.IDTELABUSCA);
 
     }
 }

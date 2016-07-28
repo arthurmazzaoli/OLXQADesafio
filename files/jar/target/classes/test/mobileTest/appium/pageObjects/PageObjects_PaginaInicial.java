@@ -13,6 +13,7 @@ public class PageObjects_PaginaInicial {
             "location_manual_button";
     public static final String XPATHRIODEJANEIRO = "//android.widget.TextView[@text='Rio de Janeiro']";
     public static final String XPATHDDD21 = "//android.widget.TextView[@text='DDD 21 - Rio de Janeiro e região']";
+    public static final String XPATHLISTAREGIAO = "//android.widget.TextView[@text='Região']";
 
     @FindBy(id = IDSELECIONARESTADO)
     protected WebElement btnSelecionarEstado;
@@ -22,5 +23,8 @@ public class PageObjects_PaginaInicial {
 
     @FindBy(xpath = XPATHDDD21)
     protected WebElement btnSelecionarDDD21;
+
+    @FindBy(xpath = XPATHLISTAREGIAO)
+    protected WebElement lblRegiaoEstados;
 
 }
