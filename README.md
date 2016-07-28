@@ -3,36 +3,41 @@
 Objetivo
 
 Verificar suas habilidades em definir cenários de testes e em programação, necessárias para automatização dos testes.
-Regras
 
-Pode usar qualquer linguagem de programação;
+Regras:
 
-Seu programa deve fazer o seguinte:
+- Pode usar qualquer linguagem de programação;
 
-Acessar o site da OLX e criar a estrutura para a escrita dos testes automatizados em BDD
+- Seu programa deve fazer o seguinte:
 
-Criar testes funcionais (Cenários para Web e Mobile sites)
+- Acessar o site da OLX e criar a estrutura para a escrita dos testes automatizados em BDD
 
-Exibir relatório de execução em HTML
+- Criar testes funcionais (Cenários para Web e Mobile sites)
 
-Criar ou utilizar alguma API já existente e criar pelo menos 2 cenários de testes para ela (Um GET e um POST).
+- Exibir relatório de execução em HTML
 
-Adicionar uma rotina para execução dos testes automaticamente
+- Criar ou utilizar alguma API já existente e criar pelo menos 2 cenários de testes para ela (Um GET e um POST).
 
-Vamos executar seu programa em um Mac OS X ou alguma distribuição Linux. Para isso, forneça um arquivo README explicando:
+- Adicionar uma rotina para execução dos testes automaticamente
+
+- Vamos executar seu programa em um Mac OS X ou alguma distribuição Linux. Para isso, forneça um arquivo README explicando:
 como executar os testes.
 
------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
-INSTRUÇÕES
+-----------------
+TESTES WEB e REST
+-----------------
 
 A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
 
+Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Testes Web e Testes Mobile.
+
+Após a execução de cada teste, ele irá logar o resultado no console.
+
+--------------
 TESTES ANDROID
-
-
-
-TESTES ANDROID
+--------------
 
 1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;
     1.1 - Acessar https://www.genymotion.com/;
@@ -69,3 +74,14 @@ TESTES ANDROID
  CPU/ABI:ARM(armeabi-v7a)
  Memory RAM: 1907
  Internal Storage: 512
+ 
+----------
+RELATÓRIOS
+----------
+
+ 
+ O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
+ 
+ O relatório de execução da aplicação Mobile, é salvo na pasta: files\jar\target\Destination\mobile.
+ 
+ Para visualizar, basta abrir o arquivo index.html dentro de cada diretório. 
