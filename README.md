@@ -75,7 +75,7 @@ TESTES ANDROID
 =========================   
 ## 7 - Realizar o download e instalar o Appium (http://appium.io/);
 =========================
-## 9 - Na pasta de instalação do Android SDK, acessar o AVD Manager;
+## 8 - Na pasta de instalação do Android SDK, acessar o AVD Manager;
     9.1 Criar o dispositivo virutal do Android com as seguintes configurações
 =========================    
 ### AVD NAME: Nexus
