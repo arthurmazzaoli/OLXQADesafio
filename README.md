@@ -52,13 +52,14 @@ TESTES ANDROID
     
 2 - Realizar download e instalar o JDK 1.8;
 
-3 - Criar as váriáveis de ambiente JAVA_HOME e o PATH;
+3 - Criar a váriável de ambiente JAVA_HOME apontando para o caminho de instalação do JDK, exempo:
+    - JAVA_HOME: C:\Program Files\Java\jdk1.8.0_91\bin;
 
 4 - Realizar Download e instalar o Android SDK;
 
 5 - Criar a váriavel de ambiente do ANDROID_HOME;
 
-6 - Acessar o SDK Manager na pasta de instalação do passo 3 e atualizar o Android;
+6 - Acessar o SDK Manager na pasta de instalação do passo 4 e atualizar o Android;
    6.1 Abrir o SDK Manager;
    6.2 Selecionar as opções 
       6.2.1 Ramificação Tools: Android SDK Tool, Android SDK Platform-tools e Android SDK Build-tools (desmarcar todas as outras opções desta ramificação Tools);
