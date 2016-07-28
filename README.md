@@ -37,6 +37,10 @@ Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Test
 
 Após a execução de cada teste, ele irá logar o resultado no console.
 
+O exemplo abaixo refere-se aos testes de GET e POST da API Rest:
+
+![screen shot](http://arthurmazza.azurewebsites.net/teste_apiREST.PNG)
+
 --------------
 TESTES ANDROID
 --------------
