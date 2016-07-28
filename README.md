@@ -35,7 +35,7 @@ TESTES WEB e REST
 
 ## Instruções para execução automática dos testes
 
-A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
+A pasta files/jar localizada na raiz do repositóprio, contém todo o conteúdo gerado pela compilação do Maven, basta executar o jar DesafioQA-1.0.jar em um sistema operacional Windows, MacOS ou qualquer outra distribuição linux.
 
 Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Testes Web e Testes Mobile.
 
