@@ -33,7 +33,13 @@ A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, ba
 
 Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Testes Web e Testes Mobile.
 
+![screen shot](http://arthurmazza.azurewebsites.net/formfx.png)
+
 Após a execução de cada teste, ele irá logar o resultado no console.
+
+O exemplo abaixo refere-se aos testes de GET e POST da API Rest:
+
+![screen shot](http://arthurmazza.azurewebsites.net/teste_apiREST.PNG)
 
 --------------
 TESTES ANDROID
@@ -79,9 +85,15 @@ TESTES ANDROID
 RELATÓRIOS
 ----------
 
- 
  O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
  
  O relatório de execução da aplicação Mobile, é salvo na pasta: files\jar\target\Destination\mobile.
  
+ 
+ ![screen shot](http://arthurmazza.azurewebsites.net/path_relatorio.PNG)
+ 
+ 
  Para visualizar, basta abrir o arquivo index.html dentro de cada diretório. 
+ 
+ 
+  ![screen shot](http://arthurmazza.azurewebsites.net/relatorio.PNG)
