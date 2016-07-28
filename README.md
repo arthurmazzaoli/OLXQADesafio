@@ -33,7 +33,7 @@ A pasta files/jar contém todo o conteúdo gerado pela compilação do Maven, ba
 
 Ao executar, irá carregar um form com um console e 3 botões: Testes Rest, Testes Web e Testes Mobile.
 
-![screen shot](http://arthurmazza.azurewebsites.net/form.png)
+![screen shot](http://arthurmazza.azurewebsites.net/formfx.png)
 
 Após a execução de cada teste, ele irá logar o resultado no console.
 
