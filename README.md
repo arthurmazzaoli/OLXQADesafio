@@ -75,9 +75,10 @@ TESTES ANDROID
  Memory RAM: 1907
  Internal Storage: 512
  
- ----------
- RELATÓRIOS
- ----------
+----------
+RELATÓRIOS
+----------
+
  
  O relatório de execução da aplicação WEB, é salvo na pasta: files\jar\target\Destination\web.
  
