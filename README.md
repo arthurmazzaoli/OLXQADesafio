@@ -50,7 +50,7 @@ TESTES ANDROID
 1 - Realizar download do Genymotion com Virtual box e realizar sua instalação;
     1.1 - Acessar https://www.genymotion.com/;
     
-2 - Realizar download e instalar o JDK;
+2 - Realizar download e instalar o JDK 1.8;
 
 3 - Criar as váriáveis de ambiente JAVA_HOME e o PATH;
 
