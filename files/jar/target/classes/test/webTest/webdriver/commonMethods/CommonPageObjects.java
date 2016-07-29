@@ -55,21 +55,6 @@ public class CommonPageObjects {
 
     }
 
-    private WebElement fluentWait(WebElement button) {
-
-        new FluentWait<WebElement>(button)
-                .withTimeout(20, TimeUnit.SECONDS)
-                .pollingEvery(1, TimeUnit.SECONDS)
-                .ignoring(NoSuchElementException.class)
-                .ignoring(TimeoutException.class)
-                .until(new Function<WebElement, Boolean>() {
-                    public Boolean apply(WebElement w) {
-                        return w.isDisplayed();
-                    }
-                });
-        return button;
-    }
-
     public void aguardarElementByXpath(String locator) {
 
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -92,6 +77,21 @@ public class CommonPageObjects {
         wait.until(ExpectedConditions.presenceOfElementLocated(By
 
                 .cssSelector(locator)));
+    }
+
+    private WebElement fluentWait(WebElement button) {
+
+        new FluentWait<WebElement>(button)
+                .withTimeout(20, TimeUnit.SECONDS)
+                .pollingEvery(1, TimeUnit.SECONDS)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(TimeoutException.class)
+                .until(new Function<WebElement, Boolean>() {
+                    public Boolean apply(WebElement w) {
+                        return w.isDisplayed();
+                    }
+                });
+        return button;
     }
 
 }

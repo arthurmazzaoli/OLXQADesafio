@@ -1,42 +1,25 @@
 package test.webTest.cucumber.features;
 
-import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import test.webTest.webdriver.commonMethods.*;
-import test.webTest.webdriver.pageObjects.PageObjects_TelaInicial;
-import test.webTest.webdriver.pageObjects.PageObjects_TelaLogin;
-import test.webTest.webdriver.utils.Constant;
 import test.webTest.webdriver.interactions.*;
-import static test.webTest.webdriver.pageObjects.PageObjects_TelaLogin.XPATHUSUARIOLOGADO;
-import static test.webTest.webdriver.utils.Constant.getPathDriver;
+import static test.webTest.webdriver.pageObjects.PageObjects_TelaInicial.*;
+import static test.webTest.webdriver.pageObjects.PageObjects_TelaLogin.*;
 
 /**
  * Created by Arthur on 25/07/2016.
  */
-public class Step_DesafioOLX {
+public class Step_DesafioOLX extends DriverInstanceWeb {
 
-    public static WebDriver driver;
-
-    @Before
-    public void setUp() throws Exception {
-
-        if (driver == null) {
-
-            System.setProperty(getPathDriver(), Constant.GECKONAME);
-            DesiredCapabilities dc = DesiredCapabilities.firefox();
-            dc.setCapability("marionette", true);
-            driver = new FirefoxDriver(dc);
-            driver.manage().window().maximize();
-
-        }
-    }
+    private WebDriver driver = instance();
+    CommonPageObjects common = new CommonPageObjects(driver);
+    Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
+    Interactions_TelaLogin paginaLogin = PageFactory.initElements(driver, Interactions_TelaLogin.class);
 
     @Dado("^que eu esteja na tela inicial \"([^\"]*)\"$")
     public void acessarTelaInicial(String URL) throws Throwable {
@@ -48,15 +31,13 @@ public class Step_DesafioOLX {
     @Dado("^exista o campo Minha conta no inicio da pagina$")
     public void verificarExistenciaCampoMinhaConta() {
 
-        CommonPageObjects common = new CommonPageObjects(driver);
-        common.aguardarElementoByCssSelector(PageObjects_TelaInicial.CSSLINKLOGIN);
+        common.aguardarElementoByCssSelector(CSSLINKLOGIN);
 
     }
 
     @Quando("^eu clico no botao Minha conta$")
     public void pressionarBotaoMinhaConta() {
 
-        Interactions_TelaInicial paginaInicial = PageFactory.initElements(driver, Interactions_TelaInicial.class);
         paginaInicial.pressionarBtnMinhaConta();
 
     }
@@ -64,7 +45,6 @@ public class Step_DesafioOLX {
     @Entao("^sou direcionado para a tela de login \"([^\"]*)\"$")
     public void validarDirecionamentoTelaLogin(String URL) throws Exception {
 
-        CommonPageObjects common = new CommonPageObjects(driver);
         common.verificarPaginaAtualURL(URL);
 
     }
@@ -72,16 +52,14 @@ public class Step_DesafioOLX {
     @Dado("^que na tela de login, os campos email e senha estejam visiveis$")
     public void VerificarExistenciaCampoLoginSenha() {
 
-        CommonPageObjects common = new CommonPageObjects(driver);
-        common.aguardarElementoById(PageObjects_TelaLogin.IDCAMPOLOGIN);
-        common.aguardarElementoById(PageObjects_TelaLogin.IDCAMPOSENHA);
+        common.aguardarElementoById(IDCAMPOLOGIN);
+        common.aguardarElementoById(IDCAMPOSENHA);
 
     }
 
     @Quando("^eu preencho o \"([^\"]*)\" valido$")
     public void preencherEmail(String email) {
 
-        Interactions_TelaLogin paginaLogin = PageFactory.initElements(driver, Interactions_TelaLogin.class);
         paginaLogin.preencherEmail(email);
 
     }
@@ -89,7 +67,6 @@ public class Step_DesafioOLX {
     @E("^preencho a \"([^\"]*)\" valida$")
     public void preencherSenha(String senha) {
 
-        Interactions_TelaLogin paginaLogin = PageFactory.initElements(driver, Interactions_TelaLogin.class);
         paginaLogin.preencherSenha(senha);
 
     }
@@ -97,10 +74,7 @@ public class Step_DesafioOLX {
     @E("^Pressiono o botao Entrar$")
     public void PressionaBotaoEntrar() {
 
-        CommonPageObjects common = new CommonPageObjects(driver);
-        Interactions_TelaLogin paginaLogin = PageFactory.initElements(driver, Interactions_TelaLogin.class);
-
-        common.aguardarElementoById(PageObjects_TelaLogin.IDBOTAOENTRAR);
+        common.aguardarElementoById(IDBOTAOENTRAR);
         paginaLogin.pressionarBotaoEntrar();
 
     }
@@ -108,7 +82,6 @@ public class Step_DesafioOLX {
     @Entao("^eu sou direcionado para tela incial do usuario OLX$")
     public void verificarDirecionamentoTelaUsuarioLogado() {
 
-        CommonPageObjects common = new CommonPageObjects(driver);
         common.aguardarElementByXpath(XPATHUSUARIOLOGADO);
         driver.close();
         driver.quit();

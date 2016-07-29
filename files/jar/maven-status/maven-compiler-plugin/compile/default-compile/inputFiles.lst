@@ -7,9 +7,11 @@ C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\cucumber\featu
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\interactions\Interactions_TelaBusca.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\pageObjects\PageObjects_PaginaInicial.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\webdriver\interactions\Interactions_TelaLogin.java
+C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\cucumber\features\DriverInstanceWeb.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\cucumber\features\RunCukesTestMobile.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\webdriver\interactions\Interactions_TelaInicial.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\appium\utils\Constant.java
+C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\cucumber\features\DriverInstanceMobile.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\view\MainFx.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\webTest\webdriver\commonMethods\CommonPageObjects.java
 C:\Users\Arthur\IdeaProjects\desafioQA\src\main\java\test\mobileTest\cucumber\features\Step_DesafioOLXMobile.java
